@@ -1,0 +1,40 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+group = 'xiaowawa.oss'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-tomcat')
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.7.1'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.7.1'
+	compile group: 'org.testng', name: 'testng', version: '6.11'
+//	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.0'
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

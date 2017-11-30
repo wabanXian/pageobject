@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="17315" started-at="2017-11-30T06:59:58Z" finished-at="2017-11-30T07:00:15Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="17315" started-at="2017-11-30T06:59:58Z" finished-at="2017-11-30T07:00:15Z">
+      <class name="doto.TestLogin">
+        <test-method status="PASS" signature="gettitle()[pri:0, instance:doto.TestLogin@4a0d85d3]" name="gettitle" duration-ms="7327" started-at="2017-11-30T14:59:58Z" finished-at="2017-11-30T15:00:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gettitle -->
+        <test-method status="PASS" signature="login()[pri:0, instance:doto.TestLogin@4a0d85d3]" name="login" duration-ms="9972" started-at="2017-11-30T15:00:05Z" finished-at="2017-11-30T15:00:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- doto.TestLogin -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
