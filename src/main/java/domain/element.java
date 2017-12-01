@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.Assert;
+
+import java.util.function.Function;
 
 
 /**
@@ -72,8 +73,9 @@ public class element {
     public void setExittext() {
         exittext.click();
     }
-    public String getexittext(){
-     return   exittext.getText();
+
+    public String getexittext() {
+        return exittext.getText();
     }
 
 //    public void checkresult(Object obj1, Object obj2, String string) {
