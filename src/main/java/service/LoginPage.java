@@ -19,7 +19,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class LoginPage {
 
-    WebDriver webDriver = Driver.htmlUnitDriver();
+    WebDriver webDriver = Driver.htmlUnitDriver(true);
     dxcsass dxcsass = new dxcsass();
     element element;
 
@@ -46,14 +46,11 @@ public class LoginPage {
         element.setLoginpassword(password);
         element.setLoginbtnid();
         Thread.sleep(2000);
-        element.setExittext();
     }
 
     public boolean checkmsg(String str1, String str2) {
         boolean rel = true;
-        if (str1 != str2) {
-            rel = false;
-        }
+        if (str1 != str2) rel = false;
         return rel;
     }
 

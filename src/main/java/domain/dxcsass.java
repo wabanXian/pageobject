@@ -22,7 +22,8 @@ public class dxcsass {
     @Getter
     private String exittxt="[退出]";
     @Getter
-    private String producturl=weburl+"/product/detail/260419";
+    private String producturl="http://www.kjt.com/product/detail/260419";
     @Getter
     private String producttitle="跨境通-t测试商品，请勿下单，下单无效(粉紫色)";
+
 }
