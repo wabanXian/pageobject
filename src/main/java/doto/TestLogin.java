@@ -14,13 +14,14 @@ import service.LoginPage;
  */
 public class TestLogin {
     LoginPage loginPage = new LoginPage();
+    dxcsass dxcsass;
 
     public boolean gettitle() {
      return   loginPage.gettitle();
     }
 
     public void login() throws InterruptedException  {
-        loginPage.Login("18708151438", "zang1020330");
+        loginPage.Login(dxcsass.getUsrname(), dxcsass.getPassword());
     }
    public String resultmsg(){
       return   loginPage.getErr();
