@@ -1,9 +1,7 @@
 package doto;
 
 
-
 import domain.dxcsass;
-import org.openqa.selenium.WebDriver;
 import service.LoginPage;
 
 /**
@@ -17,13 +15,14 @@ public class TestLogin {
     dxcsass dxcsass;
 
     public boolean gettitle() {
-     return   loginPage.gettitle();
+        return loginPage.gettitle();
     }
 
-    public void login() throws InterruptedException  {
+    public void login() throws InterruptedException {
         loginPage.Login(dxcsass.getUsrname(), dxcsass.getPassword());
     }
-   public String resultmsg(){
-      return   loginPage.getErr();
-   }
+
+    public String resultmsg() {
+        return loginPage.getErr();
+    }
 }
