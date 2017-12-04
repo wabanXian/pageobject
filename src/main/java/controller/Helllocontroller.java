@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import service.OrderPage;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,14 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class Helllocontroller {
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String hello() throws Exception {
         return "hello";
     }
 
     @RequestMapping(value = "/Im", method = RequestMethod.GET)
     public ModelAndView xx(ModelAndView modelAndView, TestLogin testLogin) throws InterruptedException {
-        if (testLogin.gettitle()==true){
+        if (testLogin.login()){
             modelAndView.addObject("msg", "ok");
         }
         else{
@@ -35,7 +36,19 @@ public class Helllocontroller {
 
 @RequestMapping(value = "/Is",method = RequestMethod.GET)
     public ModelAndView xxs(ModelAndView modelAndView, TestOrder testOrder) throws InterruptedException {
-        if (testOrder.order()==true){
+        if (testOrder.order()){
+            modelAndView.addObject("msg", "ok");
+        }
+        else{
+            modelAndView.addObject("msg", testOrder.resultmsg());
+        }
+        modelAndView.setViewName("hello");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/Iss",method = RequestMethod.GET)
+    public ModelAndView xxss(ModelAndView modelAndView, TestOrder testOrder) throws InterruptedException {
+        if (testOrder.ordret()){
             modelAndView.addObject("msg", "ok");
         }
         else{
