@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import service.OrderPage;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,9 +49,11 @@ public class Helllocontroller {
     public ModelAndView xxss(ModelAndView modelAndView, TestOrder testOrder) throws InterruptedException {
         if (testOrder.ordret()){
             modelAndView.addObject("msg", "ok");
+            modelAndView.addObject("mss1","~");
         }
         else{
             modelAndView.addObject("msg", testOrder.resultmsg());
+            modelAndView.addObject("mss1","`");
         }
         modelAndView.setViewName("hello");
         return modelAndView;

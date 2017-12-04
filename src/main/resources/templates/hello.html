@@ -32,13 +32,14 @@
 <div class="ui grid">
     <div class="four wide column">
         <div class="ui vertical fluid tabular menu">
-            <a class="item active" href="/Im">
+            <a class="item  active" href="/Im">
+                <div style="display: none" th:text="${mss1}" id="ms1"></div>
                 Bio+
             </a>
-            <a class="item" href="/Is">
+            <a class="item " href="/Is" th:text="${mss2}">
                 Pics
             </a>
-            <a class="item">
+            <a class="item " href="/Iss" th:text="${mss3}">
                 Companies
             </a>
             <a class="item">
@@ -51,5 +52,14 @@
         </div>
     </div>
 </div>
+<script type="application/javascript">
+    var ss = document.getElementById('ms1')
+    if (ss.value=="ok"){
+        ss.style="display: none color:green"
+    }
+    else {
+        ss.style="display: none color:red"
+    }
+</script>
 </body>
 </html>
