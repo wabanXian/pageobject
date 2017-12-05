@@ -7,7 +7,9 @@ import domain.element;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.Objects;
@@ -22,6 +24,8 @@ public class OrderPage {
     WebDriver webDriver = Driver.chromedriver();
     dxcsass dxcsass = new dxcsass();
     JavascriptExecutor js = (JavascriptExecutor) webDriver;
+    Actions action = new Actions(webDriver);
+
     element element;
 
     {
@@ -52,9 +56,14 @@ public class OrderPage {
             element.submitorder();
             element.nowpay();
             element.finpay();
+            Thread.sleep(2000);
+            action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).keyUp(Keys.CONTROL).sendKeys(Keys.NULL).perform();
+            action.keyDown(Keys.CONTROL).sendKeys("w").keyUp(Keys.CONTROL).sendKeys(Keys.NULL).perform();
             element.voidbth();
             js.executeScript("document.getElementsByName(\'corder\')[6].checked=true");
             element.invaildorder();
+            Thread.sleep(2000);
+            webDriver.quit();
         }
         return rel;
     }
@@ -76,15 +85,22 @@ public class OrderPage {
             element.minilogin();
             Thread.sleep(1000);
             element.tocheckout();
+            Thread.sleep(2000);
             js.executeScript("window.scrollTo(0,700)");
             Thread.sleep(2000);
             element.setPaytype();
+            Thread.sleep(2000);
             element.submitorder();
             element.nowpay();
             element.finpay();
+            Thread.sleep(2000);
+            action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).keyUp(Keys.CONTROL).sendKeys(Keys.NULL).perform();
+            action.keyDown(Keys.CONTROL).sendKeys("w").keyUp(Keys.CONTROL).sendKeys(Keys.NULL).perform();
             element.voidbth();
             js.executeScript("document.getElementsByName(\'corder\')[6].checked=true");
             element.invaildorder();
+            Thread.sleep(2000);
+            webDriver.quit();
         }
         return rel;
     }
